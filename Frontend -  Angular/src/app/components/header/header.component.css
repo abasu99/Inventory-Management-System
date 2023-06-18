@@ -1,0 +1,17 @@
+/* h2{
+    color: white;
+  } */
+
+header{ 
+
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background: rgb(2, 2, 86);
+  }
+
+  img{
+    height: 30px;
+    width: 30px;
+    margin-left: 30px;
+  }

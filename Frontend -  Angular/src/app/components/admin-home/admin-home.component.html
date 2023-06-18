@@ -1,0 +1,79 @@
+<app-header></app-header>
+<!-- <body>
+
+<h3>Reset Quantity</h3>
+<div class="container">
+    <button class="btn btn-success" type="submit" id="btn1" (click)="addReset()">Add New</button>
+    <button class="btn btn-info" type="submit" id="btn2" (click)="searchReset()">Search</button>
+    </div>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            
+            <th>Location No</th>
+            <th>Material id</th>
+            <th>Reset Quantity</th>
+            
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        
+        <tr *ngFor="let resetInventory of resetInventories">
+            
+            <td>{{resetInventory.locationNbr}}</td>
+            <td>{{resetInventory.materialId}}</td>
+            <td>{{resetInventory.resetQty}}</td>
+           
+
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body> -->
+
+<body>
+    <h4>Search by Location No & Material Id</h4>
+    <div class="center">
+    <form #searchForm="ngForm">
+    <input type="number" name="locationNbr" placeholder="Location No" id="locationNbr" required 
+    [(ngModel)]="inventory.locationNbr"/>
+    
+    <input type="text" name="materialId" id="materialId" placeholder="Material Id" 
+    style="margin-left:5px" required [(ngModel)]="inventory.materialId"/>
+    
+    <button type="submit" class="btn btn-success" style="margin-left:5px" [disabled]="searchForm.form.invalid"
+    (click)="searchByLocation(inventory.locationNbr,inventory.materialId)" >Search</button>
+    
+       <br>
+        <h5 *ngIf="inventory.id==null">{{msg}}</h5>
+        <div *ngIf="inventory.id !=null">
+           
+        <!-- <p>Material Id: {{inventory.materialId}}</p> -->
+        <p>Reset Quantity: {{inventory.resetQty}}</p>
+        <p>Order Quantity: {{inventory.orderQty}}</p>
+        <p>Available Quantity: {{inventory.resetQty - inventory.orderQty}}</p>
+    
+        <button  class="btn btn-info"  
+        (click)="updateInventory(inventory.id)">Edit</button>
+
+        <button  class="btn btn-danger" style="margin-left:5px"
+        (click)="deleteInventory(inventory.id)">Delete</button>
+    
+    </div>
+    </form>
+    </div>
+    </body>
+    
+    <div class="centered">
+        <img src="../../../assets/search-admin.png" alt="Search-admin icon"/>
+    </div>
+
+<app-footer></app-footer>
+
+
+
+

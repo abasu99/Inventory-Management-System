@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<h3 class="mb-5 text-uppercase">     Search Reset Quantity </h3>  
+                <form #addresetqtyform="ngForm" >
+                   
+                    <div class="form-group">
+                 
+                
+                  <div class="form-outline mb-4">  
+                  <input type="number" id="locationNbr" class="form-control form-control-lg" 
+                  placeholder="Location Number" [(ngModel)]="resetInventory.locationNbr" name="locationNbr"/>  
+                  
+                </div>  
+                  
+                 
+                <div class="form-outline mb-4">  
+                  <input type="text" id="materialId" class="form-control form-control-lg" 
+                  placeholder="Material Id" [(ngModel)]="resetInventory.materialId" name="materialId"/>  
+                 
+                </div>  
+        
+                <div> 
+
+                  <!-- <button type="button" (click)="searchResetQty()" class="btn btn-primary btn-lg ms-2" > Search </button>   -->
+                </div>  
+                </div>
+                </form>
+
+                <!-- <p>Reset Quantity: {{resetInventory.resetQty}}</p> -->
+                <h2>{{msg}}</h2>
+
+                <app-footer></app-footer>
+                
+             
+                
+
+            
