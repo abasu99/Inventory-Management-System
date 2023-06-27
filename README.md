@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This Java Full Stack project is designed to showcase your skills and understanding of various technologies involved in full-stack development. It incorporates both frontend and backend components to create a complete web application.
+This Java Full Stack project is designed to showcase my skills and understanding of various technologies involved in full-stack development. It incorporates both frontend and backend components to create a complete web application.
 
 This is an inventory management system of a branded company. It has separate portals for **Admin** & **User**.
 
