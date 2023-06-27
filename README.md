@@ -48,7 +48,7 @@ Before running the project, ensure that you have the following installed:
 - Git
 - Node.js and npm (if using React for the frontend)
 
-## Project Setup
+## Project Setup - Backend
 
 Follow the steps below to set up the project:
 
@@ -59,22 +59,40 @@ Follow the steps below to set up the project:
 
 2. Open the project in your preferred IDE.
 
-3. Create the required database in MySQL or MongoDB. You can find the database configuration in the project's configuration files.
-
-4. Set up the project dependencies by running the following command in the project's root directory:
+3. Set up the project dependencies by running the following command in the project's root directory:
    ```
    mvn clean install
    ```
 
-5. Configure the database connection settings in the project's configuration file - `application.properties`
+4. Configure the database connection settings in the project's configuration file - `application.properties`
 
-6. Run the project using the IDE's build and run functionality or by executing the generated JAR file.
+5. Run the project using the IDE's build and run functionality or by executing the generated JAR file.
+
+## Project Setup - Frontend
+
+Follow the steps below to set up the project:
+
+1. Clone the project repository from GitHub using the following command:
+   ```
+   git clone <repository-url>
+   ```
+
+2. Open the frontend folder in your preferred IDE.
+
+3. Set up the project dependencies by running the following command in the project's root directory:
+   ```
+   npm install
+   ```
+
+4. Run the project by running the following command in the project's root directory:
+   ```
+   ng serve 
+   ```
+
 
 ## Usage
 
-Once the project is set up and running, you can access the web application by opening a web browser and navigating to the appropriate URL (e.g., `http://localhost:8080`).
-
-You can check the endpoints in the controller file of microservices
+Once the project is set up and running, you can access the web application by opening a web browser and navigating to the appropriate URL (e.g., `http://localhost:4200/`).
 
 ---
 
