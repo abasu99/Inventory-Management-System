@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+
+<div class="wrap">
+  <div class="floatleft">
+
+
+<mat-card class="example-card">
+  <mat-card-header style="margin: 0 auto;">
+    
+    <mat-card-title ><strong>Update Reset Quantity</strong></mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Location No: {{inventory.locationNbr}}</p>
+    <p>Material Id: {{inventory.materialId}}<p>
+    <p>New Quantity - </p>
+    <input type="number" id="resetQty" class="form-control" 
+    placeholder="New Quantity" [(ngModel)]="inventory.newQty" name="resetQty" required/>  
+    <p style="color: red;font-size: small;">Note: This quantity will be added to the previous reset quantity</p>
+  </mat-card-content>
+  <mat-card-actions style="margin: 0 auto;">
+    <button type="button" (click)="update()" class="btn btn-primary" [disabled]="inventory.newQty<0"> Save </button>
+  </mat-card-actions>
+</mat-card>
+</div>
+<div class="floatright">
+  <div class="centered">
+    <img src="../../../assets/pepsi-header-logo.png" alt="pepsi logo" height="100px" width="300px">
+ 
+  </div>
+</div>
+    <div style="clear: both;"></div>
+</div>
+<app-footer></app-footer>

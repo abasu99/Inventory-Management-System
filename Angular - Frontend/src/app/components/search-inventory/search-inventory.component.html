@@ -1,0 +1,95 @@
+<app-header></app-header>
+<body>
+    <h4>Search by : 
+        <select [(ngModel)]="searchBy">
+    
+            <option value="">Location</option>
+            <option>Location & Material</option>
+    
+        </select>
+    </h4>
+    <br>
+        <div class="center">
+        <form #searchForm="ngForm">
+        <input type="number" name="locationNbr" placeholder="Location No" id="locationNbr" required 
+        [(ngModel)]="inventory.locationNbr"/>
+        
+        <input type="text" name="materialId" id="materialId" placeholder="Material Id" 
+        *ngIf="searchBy==='Location & Material'"
+        style="margin-left:5px" required [(ngModel)]="inventory.materialId"/>
+        
+    
+        <button type="submit" class="btn btn-success" style="margin-left:5px" 
+        *ngIf="searchBy!='Location & Material'"
+            [disabled]="searchForm.form.invalid"
+            (click)="searchByLocation(inventory.locationNbr)" >Search
+        </button>
+    
+        <button type="submit" class="btn btn-success" style="margin-left:5px" 
+            *ngIf="searchBy==='Location & Material'"
+            [disabled]="searchForm.form.invalid"
+            (click)="searchByLocationAndMaterial(inventory.locationNbr,inventory.materialId)" >Search
+        </button>
+        
+           <br>
+            <h5 *ngIf="inventory.id==null">{{msg}}</h5>
+            <div *ngIf="inventory.id !=null && searchBy==='Location & Material'">
+               
+            <!-- <p>Material Id: {{inventory.materialId}}</p> -->
+            <p>Reset Quantity: {{inventory.resetQty}}</p>
+            <p>Order Quantity: {{inventory.orderQty}}</p>
+            <p>Available Quantity: {{inventory.resetQty - inventory.orderQty}}</p>
+        
+            <button  class="btn btn-info"  *ngIf="isAdmin()"
+            (click)="updateInventory(inventory.id)">Update</button>
+    
+            <button  class="btn btn-danger" style="margin-left:5px" *ngIf="isAdmin()"
+            (click)="deleteInventory(inventory.id)">Delete</button>
+    
+        <button  class="btn btn-info" style="margin-left:5px" *ngIf="!isAdmin()"
+            (click)="placeOrderByLocation(inventory.id)">Place Order</button>
+        
+        </div>
+        <br>
+        <h5 *ngIf="inventory.id==null">{{msgLoc}}</h5>
+        <table *ngIf="searchForm.form.valid && searchBy!='Location & Material'" class="table table-stripped">
+            <thead>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th>Material id</th>
+                    <th>Reset Quantity</th>
+                    <th>Order Quantity</th>
+                    <th>Available Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+            
+                <tr *ngFor="let inventory of results">
+    
+                    <td>{{inventory.materialId}}</td>
+                    <td>{{inventory.resetQty}}</td>
+                    <td>{{inventory.orderQty}}</td>
+                    <td>{{inventory.resetQty - inventory.orderQty}}</td>
+    
+                    <button  class="btn btn-info"  *ngIf="isAdmin()"
+            (click)="updateInventory(inventory.id)">Edit</button>
+    
+            <button  class="btn btn-danger" style="margin-left:5px" *ngIf="isAdmin()"
+            (click)="deleteInventory(inventory.id)">Delete</button>
+
+            <button  class="btn btn-info" style="margin-left:5px" *ngIf="!isAdmin()"
+            (click)="placeOrderByLocation(inventory.id)">Place Order</button>
+                </tr>
+            </tbody>
+        </table>
+    
+        </form>
+        </div>
+</body>
+
+<div class="centered">
+    <img src="../../../assets/pepsi-logo.jpg" alt="" height="150px" width="450px"> 
+</div>
+<app-footer></app-footer>

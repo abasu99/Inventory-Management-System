@@ -1,0 +1,49 @@
+<app-header></app-header>
+<body>
+
+<!-- <div class="container">
+<button class="btn btn-success" type="submit" id="btn" (click)="getInventories()">View Inventory List</button>
+</div> -->
+<table class="table table-dark table-stripped">
+    <thead>
+        <tr>
+            <!-- <th>Id</th> -->
+            <th>Location No</th>
+            <th>Material id</th>
+            <th *ngIf="isAdmin()">Reset Quantity</th> <!--admin-->
+            <th *ngIf="isAdmin()">Order Quantity</th> <!--admin-->
+            <th>Available Quantity</th>
+            <th *ngIf="isAdmin()">Date-Time</th> <!--admin-->
+            <th *ngIf="isAdmin()">Actions</th>
+            <th *ngIf="!isAdmin()">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <!-- <tr> -->
+        <tr *ngFor="let inventory of inventories">
+            <!-- <td>{{inventory.id}}</td> -->
+            <td>{{inventory.locationNbr}}</td>
+            <td>{{inventory.materialId}}</td>
+            <td *ngIf="isAdmin()">{{inventory.resetQty}}</td> <!--admin-->
+            <td *ngIf="isAdmin()">{{inventory.orderQty}}</td> <!--admin-->
+            <td>{{inventory.resetQty - inventory.orderQty}}</td>
+            <td *ngIf="isAdmin()">{{inventory.updateDateTime}}</td> <!--admin-->
+
+            <td><button *ngIf="isAdmin()" class="btn btn-info" (click)="updateInventory(inventory.id)">Update</button></td> <!--admin-->
+            <td><button *ngIf="isAdmin()" class="btn btn-danger" (click)="deleteInventory(inventory.id)">Delete</button></td> <!--admin-->
+            <td><button *ngIf="!isAdmin()" class="btn btn-info" (click)="placeOrder(inventory.id)">Place Order</button></td>
+   
+        </tr>
+    </tbody>
+</table>
+</body>
+
+<app-footer></app-footer>
+
+<!-- <h2>  Welcome Admin</h2>
+<br>
+<button type="submit" class="btn btn-info btn-lg" (click)="logOut()">Log Out</button>  -->
+
+
+
