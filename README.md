@@ -1,4 +1,4 @@
-# **Inventory-Management-System**
+# **Inventory-Management-System - By Arnab Basu**
 ##A full stack java project
 
 
@@ -30,7 +30,7 @@ The project utilizes the following technologies:
 
 - **Database:**
   - MySQL
-  - MongoDB (optional)
+  - MongoDB 
   
 - **Development Tools:**
   - IDE (IntelliJ, Eclipse, or any other Java IDE)
@@ -44,9 +44,10 @@ Before running the project, ensure that you have the following installed:
 
 - Java Development Kit (JDK)
 - IDE of your choice
-- MySQL or PostgreSQL (depending on your database choice)
+- MySQL Workbench
+- MongoDB Compass
 - Git
-- Node.js and npm (if using React for the frontend)
+- Node.js 
 
 ## Project Setup - Backend
 
@@ -67,6 +68,7 @@ Follow the steps below to set up the project:
 4. Configure the database connection settings in the project's configuration file - `application.properties`
 
 5. Run the project using the IDE's build and run functionality or by executing the generated JAR file.
+
 
 ## Project Setup - Frontend
 
@@ -89,11 +91,18 @@ Follow the steps below to set up the project:
    ng serve 
    ```
 
-
 ## Usage
 
 Once the project is set up and running, you can access the web application by opening a web browser and navigating to the appropriate URL (e.g., `http://localhost:4200/`).
 
+Default Admin credentials-
+
+Username - admin@ims.com   
+Password - admin1
+                                                                                                              
+User can sign up and then login to use the application
 ---
+
+## Thank You !
 
 Feel free to modify this README file according to your project's specific requirements and needs. Good luck !
